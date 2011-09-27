@@ -154,3 +154,75 @@
     }
 
 } (jQuery));
+
+
+var Observer = $.makeClass({
+    init: function() {
+        this.fns = [];
+    },
+    subscribe: function(fn) {
+        this.fns.push(fn);
+    },
+    fire: function() {
+        for (var i = 0; i < this.fns.length; i++) {
+            try {
+                this.fns[i].apply(this, arguments);
+            }
+            catch (error) { }
+        }
+    }
+});
+
+var Poller = $.makeClass({
+    init: function(fn, interval){
+        this.Poll = new Observer();
+        this.interval = interval || 1000;
+        
+        if(fn) this.Poll.subscribe(fn);
+        
+        this.start();
+    },
+    start: function(){
+        this.stop();
+        this.intervalId = setInterval(function(){ this.Poll.fire(); }.as(this), this.interval);
+        return this;
+    },
+    stop: function(){
+        clearInterval(this.intervalId);
+        this.intervalId = null;
+        return this;
+    },
+    isRunning: function(){
+        return this.intervalId != null;
+    }
+});
+
+var HashManager = $.makeClass({
+    init: function(){
+        this.HashChanged = new Observer();
+        this.poller = new Poller(this.poll.as(this), 330);
+        this.OldHash = this.getHash();
+    },
+    subscribe: function(fn){
+        this.HashChanged.subscribe(fn);
+    },
+    poll: function(){
+        if(this.OldHash != this.getHash()){
+            this.OldHash = this.getHash();
+            this.HashChanged.fire();
+        }
+    },
+    getHash: function(){
+        return window.location.hash.replace(/#/, "");
+    },
+    getObject: function(){
+        var hash = this.getHash();
+        return hash ? $.evalJSON(hash) : null;
+    },
+    setObject: function(obj){
+        this.setHash($.toJSON(obj));
+    },
+    setHash: function(hash){
+        window.location.hash = this.OldHash = (hash || "").replace(/ /g, "");
+    }
+});
