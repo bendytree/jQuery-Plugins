@@ -1,0 +1,32 @@
+<html>
+    <head>
+	    <script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jquery/1.6.2/jquery.min.js" ></script>
+	    <script type="text/javascript" src="../jquery.makeclass.js" ></script>
+    </head>
+    <body>
+    
+      <div>Click to hide me.</div>
+ 
+      <script type="text/javascript">
+      $(function(){
+ 
+        var Controller = $.makeClass({
+            init: function(){
+                this.div = $("div");
+            },
+            begin: function(){
+                this.div.click(this.clickedDiv.as(this))
+             },
+            clickedDiv: function(){
+                this.div.hide();
+            }
+        });
+ 
+        var controller = new Controller();
+        controller.begin();
+ 
+      });
+      </script>
+
+    </body>
+</html>
