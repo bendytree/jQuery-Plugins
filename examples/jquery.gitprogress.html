@@ -1,0 +1,275 @@
+<html>
+    <head>
+	    <script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jquery/1.6.2/jquery.min.js" ></script>
+        <script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jqueryui/1.8.16/jquery-ui.min.js"></script>
+	    <script type="text/javascript" src="../jquery.gitprogress.js" ></script>
+        <script type="text/javascript" src="http://people.iola.dk/olau/flot/jquery.flot.js"></script>
+
+        <style type="text/css">
+          .gitprogress {
+              display:none;
+              background-color:rgba(0, 0, 0, .8);
+              padding:20px;
+              width:510px;
+              position:fixed;
+              right:0;
+              top:100px;
+              border-radius:20px 0 0 20px;
+              -webkit-border-radius:20px 0 0 20px;
+              -moz-border-radius:20px 0 0 20px;
+              text-align:center;
+          }
+          .gitprogress h1 {
+              color: #FFFFFF;
+              text-align:center;
+              margin-top:0;
+              padding-top:0;
+          }
+          .gitprogress .graph {
+              width:500px;
+              height:320px;
+              margin: 0 auto 20px 0;
+          }
+          .gitprogress .close {
+              position:absolute;
+              top:10px;
+              right:10px;
+              width:60px;
+              padding:7px;
+              text-align:center;
+              color:#333333;
+              background-color:#CCCCCC;
+              border:solid 1px #EEEEEE;
+              font-size:10pt;
+              border-radius:3px;
+              -webkit-border-radius:3px;
+              -moz-border-radius:3px;
+              cursor:pointer;
+              font-weight:bold;
+          }
+          .gitprogress .close:hover {
+              background-color:#EEEEEE;
+              border-color:#FFFFFF;
+              color:#000000;
+          }
+        </style>
+    </head>
+    <body style="background-color:#990000;">
+    
+      <div class="gitprogress">
+        <h1>Development Progress</h1>
+        <div class="graph">Loading...</div>
+        <div class="close">Close</div>
+      </div>
+
+      <div class="launcher">Show</div>
+
+<script id="log" type="text/javascript">
+commit e7bd415225be8f52d75f07e646cf09067d6c0316
+Author: Josh <jwright@mtmrecognition.com>
+Date:   2012-01-23
+
+    updated report
+
+ 1 files changed, 0 insertions(+), 135 deletions(-)
+
+commit b16599f84ede8c902ed778b49c68b35bf982df33
+Author: Josh <jwright@mtmrecognition.com>
+Date:   2012-01-23
+
+    added report
+
+ 1 files changed, 135 insertions(+), 0 deletions(-)
+
+commit 15fcee3bd7ff261a882905a4c5cfbf5eece24db1
+Author: Josh <jwright@mtmrecognition.com>
+Date:   2012-01-19
+
+    fixed adding and removing comments
+
+ 14 files changed, 308 insertions(+), 109 deletions(-)
+
+commit d7ddb7b6059af83fd66fb75e2a8919bb1160a5fb
+Author: Josh <jwright@mtmrecognition.com>
+Date:   2012-01-19
+
+    fixed popovers for new content
+
+ 1 files changed, 3 insertions(+), 1 deletions(-)
+
+commit 0063da961855e630fae52b8f5fd4d2c1ca636b8b
+Author: Josh <jwright@mtmrecognition.com>
+Date:   2012-01-19
+
+    fixed notifications for ajax requests
+
+ 9 files changed, 219 insertions(+), 168 deletions(-)
+
+commit 7b28e958bf6fa7b393d522926a9cd7d0e5c971a5
+Author: Josh <jwright@mtmrecognition.com>
+Date:   2012-01-19
+
+    implemented like and unlike auto refreshing the badge
+
+ 4 files changed, 35 insertions(+), 14 deletions(-)
+
+commit a2d5da192645b75df1f310ce21b18d20c18b45ab
+Author: Josh <jwright@mtmrecognition.com>
+Date:   2012-01-19
+
+    finished look of popover for likes
+
+ 20 files changed, 667 insertions(+), 69 deletions(-)
+
+commit bf60e2f7c9d5fe5ea875ce1c60e235f55b068617
+Author: Josh <jwright@mtmrecognition.com>
+Date:   2012-01-12
+
+    added markup for news items
+
+ 17 files changed, 325 insertions(+), 24 deletions(-)
+
+commit c20d2fb7ce7d944ab64868674b75a69f8de58932
+Author: Josh <jwright@mtmrecognition.com>
+Date:   2012-01-10
+
+    change group builder to keep correct groups and usergroups
+
+ 7 files changed, 106 insertions(+), 45 deletions(-)
+
+commit 741a6e51f8638e3412d9880b6c208e9d705a0fa7
+Author: Josh <jwright@mtmrecognition.com>
+Date:   2012-01-09
+
+    added groups for users
+
+ 98 files changed, 1876 insertions(+), 1353 deletions(-)
+
+commit 9161e8ff1402f4c4544f94db5c0225492ed1e14f
+Author: Josh <jwright@mtmrecognition.com>
+Date:   2012-01-05
+
+    added start of notifications
+
+ 61 files changed, 1858 insertions(+), 1264 deletions(-)
+
+commit a835423bb1b9785cd8097dac31e1dfaf639f6eea
+Author: Josh <jwright@mtmrecognition.com>
+Date:   2012-01-05
+
+    added change password functionality
+
+ 20 files changed, 409 insertions(+), 47 deletions(-)
+
+commit 8f60bfda73cf6b3742bdefa5c6702aafb89408f8
+Author: Josh <jwright@mtmrecognition.com>
+Date:   2012-01-05
+
+    finished login process
+
+ 18 files changed, 502 insertions(+), 13 deletions(-)
+
+commit 7c59a2e7fd92b7107cac9dbcf8535d1c6a5b238a
+Author: Josh <jwright@mtmrecognition.com>
+Date:   2012-01-04
+
+    added area for customers and auth filter
+
+ 31 files changed, 986 insertions(+), 377 deletions(-)
+
+commit 695d548da8dfbf1f52a0901fa4d58acca437d8e8
+Author: Josh <jwright@mtmrecognition.com>
+Date:   2012-01-04
+
+    added basic layout for master page
+
+ 33 files changed, 888 insertions(+), 178 deletions(-)
+
+commit 0fdd0eeb5f42a596a11c615a713b16033349731f
+Author: Josh <jwright@mtmrecognition.com>
+Date:   2012-01-03
+
+    added nhibernate
+
+ 24 files changed, 973 insertions(+), 51 deletions(-)
+
+commit babecf0f7b495702cea589d9f70e47f8c2f71ba8
+Author: Josh <jwright@mtmrecognition.com>
+Date:   2011-12-27
+
+    added nhibernate
+
+ 18 files changed, 188 insertions(+), 5 deletions(-)
+
+commit 977b064faeeb59347805e1c2ee81035197e84a6c
+Author: Josh <jwright@mtmrecognition.com>
+Date:   2011-12-27
+
+    removed junk
+
+ 49 files changed, 0 insertions(+), 43362 deletions(-)
+
+commit 4eefb7126dfc8e2ddf5ec75cf24b22a6bcda1560
+Author: Josh <jwright@mtmrecognition.com>
+Date:   2011-12-27
+
+    initial commit
+
+ 108 files changed, 91277 insertions(+), 0 deletions(-)
+
+</script>
+ 
+      <script type="text/javascript">
+      $(function(){
+ 
+        $.gitprogress("http://buzz.am/gitprogress/app.txt", function(progress){
+
+            var data = [];
+            var ticks = [];
+            $.each(progress.days, function(i, day){
+                data.push([day.date, day.modifications]);
+                //ticks.push([day.date, day.dateStr]);
+            });
+
+            var options = {
+                series: {
+                    lines: {
+                        fill: true,
+                        fillColor: "rgba(0, 255, 0, 0.3)"
+                    }
+                },
+                colors: ["#00FF00"],
+                xaxis: {
+                    mode: "time",
+                    timeFormat: "%b %d",
+                    tickColor: "#555555",
+                    color: "#999999"
+                },
+                yaxis: {
+                    min: progress.min * .98,
+                    tickColor: "#555555",
+                    color: "#999999",
+                    labelWidth: 30
+                },
+                grid: {
+                    backgroundColor: "#333333",
+                    borderWidth:0
+                }
+            };
+
+            $.plot($(".gitprogress .graph"), [data], options);
+        });
+
+        $(".gitprogress .close").click(function(){
+            $(this).closest(".gitprogress").effect("slide", { direction: "right", mode: "hide" });
+        });
+
+        $(".launcher").click(function(){
+            $(".gitprogress").effect("slide", { direction: "right", mode: "show" });
+        });
+ 
+      });
+      </script>
+
+    </body>
+</html>
